@@ -1,0 +1,374 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+        :root {
+            --charcoal-slate: #262421;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #1e1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .stone-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            opacity: 0.015;
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 248, 246, 0.7);
+            border: 1px solid rgba(139, 113, 109, 0.15);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(255, 248, 246, 0) 0%, rgba(255, 248, 246, 1) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hmong-pattern {
+            mask-image: url('https://www.transparenttextures.com/patterns/az-subtle.png');
+            opacity: 0.08;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1e1b15",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#39322c",
+                        "on-secondary-fixed-variant": "#4a463f",
+                        "surface-variant": "#e8e1df",
+                        "tertiary-container": "#504842",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-highest": "#e8e1df",
+                        "surface-dim": "#e0d8d6",
+                        "surface": "#fff8f6",
+                        "inverse-on-surface": "#f7efed",
+                        "on-surface-variant": "#58413e",
+                        "outline": "#8b716d",
+                        "on-primary-fixed": "#410000",
+                        "inverse-primary": "#ffb4a9",
+                        "primary": "#6b0804",
+                        "primary-container": "#8c2218",
+                        "inverse-surface": "#33302f",
+                        "background": "#fff8f6",
+                        "surface-tint": "#a9372a",
+                        "on-tertiary-container": "#c2b7b0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#faf2f0",
+                        "surface-container-high": "#eee7e5",
+                        "on-primary-container": "#ffa193",
+                        "secondary-fixed": "#e8e2d8",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#66625a",
+                        "tertiary-fixed-dim": "#d0c4bd",
+                        "on-tertiary-fixed-variant": "#4d4540",
+                        "on-surface": "#1e1b1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#201a16",
+                        "secondary": "#625e56",
+                        "tertiary-fixed": "#ece0d8",
+                        "secondary-fixed-dim": "#ccc6bc",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e6dfd5",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#881f15",
+                        "on-background": "#1e1b1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdad5",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f4ecea",
+                        "outline-variant": "#dfbfbb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max-width": "1280px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["Source Sans 3"],
+                        "label-sm": ["Source Sans 3"],
+                        "headline-sm": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "label-md": ["Source Sans 3"],
+                        "body-md": ["Source Sans 3"],
+                        "headline-md": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface bg-background">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop h-20 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20">
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-widest">NYA</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Concept</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Menu</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-on-surface-variant cursor-pointer hover:text-primary transition-all">VN / EN</span>
+<span class="material-symbols-outlined text-on-surface cursor-pointer">account_circle</span>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-[716px] w-full overflow-hidden flex items-end pb-24">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.2]" data-alt="A moody, atmospheric shot of the Sapa highlands at dawn, with thick mist rolling over terraced rice fields and dark, jagged mountain silhouettes. The lighting is low-key and dramatic, emphasizing the rugged beauty of the Hmong heritage landscape. A warm, subtle amber glow from a distant farmhouse fire pierces the cool blue and charcoal slate tones of the early morning. The visual style is premium and artisanal, reflecting a deep connection to the earth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt1SCgc9G4-Lee4YW3prJZr8Quhk8RgyuwTMQ7lqTGlN2-sDoh94V2h5bCCTILGR4m7hIWuTP8nj-UGX5Al4KK4oIG7udg7BkT0jJmRMmDy1UKY77OicXOaLO0liwHz6NhSVLAQaOlLkolwTqrPogPs3DSvfmAKqjMzxxEyHDA6q8JFBik8eTf61bjXuEnDns6tbVXpJu6l2tzkilbscFL-Ugc7fz21dVGutjzzNq7BNnqkquwdGnjOddbRQYj7fTM_q5GUqeDytEZ">
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto w-full">
+<span class="font-label-md text-label-md text-secondary mb-4 block uppercase tracking-widest">TRADITIONAL SAPA KITCHEN</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">A QUỲNH</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">A sensory journey through the highland flavors, where every dish tells a story of the soil, the smoke, and the seasons.</p>
+</div>
+</section>
+<!-- Menu Navigation (Local) -->
+<div class="sticky top-20 z-40 bg-surface/95 backdrop-blur-sm py-6 border-b border-outline-variant/20">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop flex gap-8 md:gap-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<a class="font-label-md text-label-md text-primary border-b border-primary pb-2" href="#thang-co">THẮNG CỐ (MENU NGỰA)</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all pb-2" href="#local-dishes">MÓN LOCAL KHÁC</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all pb-2" href="#drinks">RƯỢU NGÔ &amp; ĐỒ UỐNG</a>
+</div>
+</div>
+<!-- Section: Thang Co -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto" id="thang-co">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-16">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">SIGNATURE HERITAGE</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-on-surface">Thắng Cố</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 italic">
+                    The soul of highland markets. Prepared with 12 traditional spices including cardamom, star anise, and cinnamon bark, slow-simmered for hours in a large cast-iron cauldron.
+                </p>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="relative aspect-[4/3] overflow-hidden rounded-lg shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-end food photograph of a steaming bowl of traditional Thang Co, horse meat stew. The scene is set in a rustic, dimly lit Sapa kitchen with stone walls and wooden textures. Soft, warm natural light highlights the rich, dark broth and the vibrant green of local herbs scattered on top." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFRP4ctpP-DXnh3t0cxFAMFLmXiE4D4opJSB-At57dLS1NQ-uhU_NayuCjVdQL5r1Z9Ra4CaPd2rR7_g7cwcIXOd3v4ygl0-qdaV0oNYw6GaZDmdBC-MPFfd53u0MnY8hrErHMibsqF6p8lIb3FIuflnCU4F6kBDb41ziNdAsn8r_BaorAe8biC9AB78F0isKagRJpv2lddKKqXO6OixFnF8p8Nkr5MtAY2UXiAlPOi1J4Jbm5pzcV7qhtbQz-7rl1Ys7cTV3TV1GI">
+</div>
+</div>
+</div>
+<!-- Horse Meat Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="mb-4 overflow-hidden rounded-lg shadow-sm">
+<img class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Gourmet presentation of sliced grilled horse meat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2ZtZGlJqxzv6j6KkR6IL4yyb-4lwIKbARJLkB8RGhLhvOlaUXiQNRFgqE20Bu5YB14A8joEYXRsE1xfm5CnhN98scFgIcjHF2i0sEPxpo221LNB1MxVOd0DBFuckERY0VR6a5DC3GkXUzjmEJq9ArunLMcHHAJIq0luDU1O1fbM9LS6tpCPKCaQ1kD28Sh3joey1u3FBCmAIXyU9zGIgC6kdGGdBAvldvsWh-kEdAXlPFdea0J5G2w9gMtp9D_htq9z1U9fSA_3kB">
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Thịt Ngựa Nướng Ngói</h3>
+<span class="font-label-md text-label-md text-secondary">350K</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Sizzling horse meat grilled on traditional roof tiles with wild honey and "mắc khén" seeds.</p>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="mb-4 overflow-hidden rounded-lg shadow-sm">
+<img class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A delicate salad of smoked horse meat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3hAhhAi1MY7ynfmYaKrWAkbkbvyWhSjMmgPC6IIFO1XZC-GuLHacW1zNlHfhwpnugT_0X-6ZU-RkBmTJVbGxFt318eeYswjM1pGa1dJx_4v9VfEdZlHpJNvE_jMmIAcg4EjdI7x1S55JJHlWCjLO9epXsBrgwv7oNRwFGsziTFTbnI35HSKticuNUvWtX78D8Gwpeb5XN6elHpTLnpyfYP_Apsinrwz7KeFPDvrvuahbNOhHU3bqUHJ547gRiPsJVscAt02gE48I7">
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Gỏi Ngựa Tầm Bóp</h3>
+<span class="font-label-md text-label-md text-secondary">280K</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Thinly sliced smoked meat tossed with cape gooseberry leaves and a spicy citrus dressing.</p>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="mb-4 overflow-hidden rounded-lg shadow-sm">
+<img class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A warm, comforting pot of horse meat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNfqTwZcp8JQp-rbJg7153EEtsWXZMxCUvgc8i3peFWp0el5DHrden2ySFKGn7iaD_jZ2zR9SDyUEJOASNOGkxZBaboXX0IrRG-h6owqXSbroIEeP8pucDQqHhah7FOwut3YBZR0K2WHZsBUKXSTsAaGTbI2KKmgTwGnF0_WIFEyGlU9XsesLhowtqw8N9Ju5fzFTqF7JRqkBg8-kKK_BVNSXyVkjOM6qUvRr-ZubdJePMm53wSt1QVyNFCxNsU9VhbIR8_q3z0YQW">
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Thắng Cố Đặc Biệt</h3>
+<span class="font-label-md text-label-md text-secondary">450K</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Our signature cauldron stew, served with traditional corn cake and forest dipping sauce.</p>
+</div>
+</div>
+</section>
+<!-- Section: Local Dishes (Bento Grid Style) -->
+<section class="bg-surface-container-low py-section-gap relative overflow-hidden" id="local-dishes">
+<div class="absolute inset-0 hmong-pattern pointer-events-none"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto relative z-10">
+<div class="mb-16">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">MÓN LOCAL KHÁC</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Highland Essentials</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Feature Large -->
+<div class="md:col-span-8 group relative aspect-[16/9] overflow-hidden flex items-end p-8 rounded-xl shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Hmong feast laid out on a low wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgIxbFdcx9vd8h8kPbSSAOXQ-HJhzQehIVp2J31zrIta6LrZxAdbQy82ElgoW8CLiNaNlJMO6uCiA7qqIh1sg-1Ow37e20y2r5Y9adkoSXCxLoFOxRwioLY3cmrvMIvZsps1Eo3gxp6m36YJF3Az_TXwc_0N1Oip6EHkoss09hjltGsPEqkJyknpkhfSLS8f1xD0JNpVE8erpACbDURajV5XyzuEV0_vzAAjixusQQVxLNXqnFrCSKqhyH1cBAkmodMg5F8pwWzwSS">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="relative">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Lợn Cắp Nách Nướng Ống Tre</h3>
+<p class="font-body-md text-white/90 mb-4 max-w-lg">Wild mountain pork grilled inside bamboo tubes, infused with forest aromas.</p>
+<span class="font-label-md text-label-md bg-primary text-on-primary px-4 py-2 rounded-full inline-block">520K / PORTION</span>
+</div>
+</div>
+<!-- Vertical Small -->
+<div class="md:col-span-4 glass-panel p-8 flex flex-col justify-between rounded-xl shadow-sm">
+<div>
+<span class="font-label-md text-label-md text-secondary mb-4 block uppercase tracking-widest">STREET CLASSIC</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">Cơm Lam &amp; Gà Nướng</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fragrant sticky rice in bamboo paired with free-range mountain chicken, grilled over charcoal.</p>
+</div>
+<div class="mt-8 border-t border-outline-variant/30 pt-6">
+<div class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">180K</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all shadow-md">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Horizontal Mid 1 -->
+<div class="md:col-span-6 flex flex-col md:flex-row glass-panel overflow-hidden rounded-xl shadow-sm">
+<div class="md:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-500" data-alt="Trout fillet grilled with ginger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqymk-_N-ori0V1Autpud5knoVDJnttK6shYq20Boc1Ae1SVKXfU5gTSuzrVXU5vb0IkF1nl7XGNv80LC4MWCIhSiC-pc0rawHQbenEdWZh-AI10ltVplrwuwrEJ7MvVo6FwT0rCeI4FHK5loIQ2TPnIncx1XkoplXt6wY8gxy9OuaQfJtnllMqPJTlq4qxLlKupalUCrcIkZZbULcDK78ERxLZ7WToc91kakDMI9PslZln5Mc7FT--mv4EDFgXXspL8A-vV2BehP8">
+</div>
+<div class="md:w-1/2 p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Cá Tầm Sapa Nướng</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Sapa cold-water sturgeon grilled with galangal and fermented rice.</p>
+<span class="font-label-md text-label-md text-primary font-bold">240K</span>
+</div>
+</div>
+<!-- Horizontal Mid 2 -->
+<div class="md:col-span-6 flex flex-col md:flex-row glass-panel overflow-hidden rounded-xl shadow-sm">
+<div class="md:w-1/2 overflow-hidden order-1 md:order-2">
+<img class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-500" data-alt="Vibrant salad of wild Sapa vegetables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3w-llf9dgUr-DwjfaTbA5T6xxU6VKxPDCqxApkMr506wr7sR3sSQxmam8WoIr5S1Y38Ya-keNVOtBynedhofVqXpOGIYr9nrqH1Sq3bZSXR9XoOCh-cTi1XzofkJZsP-GzHVbfwr5TI2C7DCRmDD9IKp2gQZoYZk6NcvIu7L9fRiPhrg3f2VipTDUXDLr9X8eBiKFQLV5LhDswvl-dijpAwtygWcopLUsfJeTBoQJHN7Q4E47BdKKLc5hiHxHNDAQ90SbXvBliOGy">
+</div>
+<div class="md:w-1/2 p-8 order-2 md:order-1">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Rau Mầm Đá Xào Tỏi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Rare 'Rock Sprout' vegetables harvested from high altitudes, stir-fried with garlic.</p>
+<span class="font-label-md text-label-md text-primary font-bold">120K</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Drinks / Spirit -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto text-center" id="drinks">
+<div class="max-w-2xl mx-auto mb-16">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest">LIQUID GOLD</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-on-surface">Highland Spirits</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The perfect companion to Thắng Cố. Our house-made corn liquor is double-distilled using 30 traditional herbs.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-16">
+<div class="flex flex-col items-center">
+<div class="w-24 h-48 mb-6 border border-outline-variant bg-surface-container-low relative flex items-center justify-center rounded shadow-sm">
+<div class="absolute inset-x-2 bottom-2 bg-secondary/10 h-32"></div>
+<span class="material-symbols-outlined text-4xl text-secondary">liquor</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Rượu Ngô Bản Phố</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">45K / SHOT</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-24 h-48 mb-6 border border-outline-variant bg-surface-container-low relative flex items-center justify-center rounded shadow-sm">
+<div class="absolute inset-x-2 bottom-2 bg-primary/10 h-24"></div>
+<span class="material-symbols-outlined text-4xl text-primary">wine_bar</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Rượu Táo Mèo</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">55K / SHOT</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-24 h-48 mb-6 border border-outline-variant bg-surface-container-low relative flex items-center justify-center rounded shadow-sm">
+<div class="absolute inset-x-2 bottom-2 bg-tertiary/10 h-40"></div>
+<span class="material-symbols-outlined text-4xl text-tertiary">eco</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Trà San Tuyết</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">35K / POT</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-section-gap px-6 md:px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-highest border-t border-outline-variant/30">
+<div class="flex flex-col gap-6">
+<div class="font-headline-sm text-headline-sm text-on-surface">NYA Private Dining</div>
+<p class="max-w-xs font-body-md text-body-md text-on-surface-variant">An authentic culinary destination in the heart of Sapa, dedicated to preserving highland heritage through refined gastronomy.</p>
+<div class="font-label-md text-label-md text-secondary uppercase tracking-wider">© 2024 NYA Private Dining. All rights reserved.</div>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Links</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Fanpage</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-widest">Visit Us</span>
+<p class="font-body-md text-body-md text-on-surface-variant">15 Fansipan Street,<br>Sapa Town, Lao Cai</p>
+<p class="font-body-md text-body-md text-on-surface-variant font-bold text-primary">+84 123 456 789</p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation for Mobile -->
+<div class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant/20">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-md uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-[10px] font-label-md uppercase">Menu</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-label-md uppercase">Locate</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-md uppercase">Profile</span>
+</div>
+</div>
+<script>
+    // Simple scroll reveal for menu items
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.group, .glass-panel').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+        observer.observe(el);
+    });
+</script>
+</body></html>

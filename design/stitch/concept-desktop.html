@@ -1,0 +1,341 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1e1b15",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#39322c",
+                        "on-secondary-fixed-variant": "#4a463f",
+                        "surface-variant": "#e8e1df",
+                        "tertiary-container": "#504842",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-highest": "#e8e1df",
+                        "surface-dim": "#e0d8d6",
+                        "surface": "#fff8f6",
+                        "inverse-on-surface": "#f7efed",
+                        "on-surface-variant": "#58413e",
+                        "outline": "#8b716d",
+                        "on-primary-fixed": "#410000",
+                        "inverse-primary": "#ffb4a9",
+                        "primary": "#6b0804",
+                        "primary-container": "#8c2218",
+                        "inverse-surface": "#33302f",
+                        "background": "#fff8f6",
+                        "surface-tint": "#a9372a",
+                        "on-tertiary-container": "#c2b7b0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#faf2f0",
+                        "surface-container-high": "#eee7e5",
+                        "on-primary-container": "#ffa193",
+                        "secondary-fixed": "#e8e2d8",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#66625a",
+                        "tertiary-fixed-dim": "#d0c4bd",
+                        "on-tertiary-fixed-variant": "#4d4540",
+                        "on-surface": "#1e1b1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#201a16",
+                        "secondary": "#625e56",
+                        "tertiary-fixed": "#ece0d8",
+                        "secondary-fixed-dim": "#ccc6bc",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e6dfd5",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#881f15",
+                        "on-background": "#1e1b1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdad5",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f4ecea",
+                        "outline-variant": "#dfbfbb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max-width": "1280px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["Source Sans 3"],
+                        "headline-sm": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "label-md": ["Source Sans 3"],
+                        "label-sm": ["Source Sans 3"],
+                        "body-md": ["Source Sans 3"],
+                        "headline-md": ["EB Garamond"],
+                        "label-caps": ["Source Sans 3"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}]
+                    }
+                }
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #1e1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .texture-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<div class="fixed inset-0 texture-overlay z-[60]"></div>
+<!-- Navigation Header -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-widest">NYA</div>
+<div class="hidden md:flex gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase" href="#">About</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md uppercase" href="#">Concept</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md uppercase" href="#">Menu</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-secondary font-label-md text-label-md uppercase tracking-wider cursor-pointer hover:text-primary transition-all">Language</span>
+<span class="material-symbols-outlined text-primary text-2xl cursor-pointer">account_circle</span>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-margin-desktop mb-section-gap relative">
+<div class="max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row items-end gap-gutter mb-12">
+<h1 class="font-display-lg text-display-lg md:text-[84px] leading-none uppercase tracking-tighter max-w-2xl text-on-surface">
+                        A QUỲNH <br>
+<span class="text-primary italic font-medium">Three Floors</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm pb-4">
+                        A sanctuary of highland refinement spread across three distinct levels of private intimacy, reimagined for the modern epicurean.
+                    </p>
+</div>
+<div class="w-full h-[614px] overflow-hidden rounded-lg shadow-xl shadow-primary/5">
+<img alt="A sophisticated dining room interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOuuUyw8_0j3CDOq_0U4vZ9Tq5mDaIw8pkCQTp3Jy-rGq-q1UJYwSABm0f21AVHSUQqD3dBKvyPMfx0SK2b4fX8YIUk1uVaAmimpg5JhJpr1ag6dsTtv2f3oXQEYepi6SOno0uH3aIHe7pvaRHCSJ5I15o8TT85nqMHlp5I973WyLkzmgyGw0Gv2fYKCP7uBwT_Y0XLoN-56k74UMCDb6636FdMtMBNQGK6S3zhunRthdz6nkkx-tevcOW2QW77gRSQMGguzdDUHp7">
+</div>
+</div>
+</section>
+<!-- Floor Navigation / Indicator -->
+<div class="sticky top-20 z-40 px-margin-desktop mb-12 flex justify-center bg-surface/80 backdrop-blur-sm py-4">
+<div class="flex gap-12 border-b border-outline-variant pb-2">
+<a class="font-label-caps text-label-caps text-primary hover:text-primary transition-colors border-b-2 border-primary -mb-[10px] pb-2" href="#floor1">FLOOR 01 / T1</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-2" href="#floor2">FLOOR 02 / T2</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-2" href="#floor3">FLOOR 03 / T3</a>
+</div>
+</div>
+<!-- Floor 1: The Hearth (T1) -->
+<section class="px-margin-desktop mb-section-gap scroll-mt-32" id="floor1">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative group">
+<div class="aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+<img alt="Artisanal dining table" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Ta-nOkg3w-bPvazgeNwJDVNwsVqEW87LgaX2VEJk-uE6zOfkkgnU9Qd3MtsGkyy7sFSRH6D2ui5XuDz3GtiCLqotYIbg-XmIKrUuQdcyQOyw5hYIgp3W15f-F_v_UncUFpZxUB39WkVwvQ5OexcTBH56P6Nyif160Z5vnyUy0FbMrHj1V0EQdrE4iQCtbQYtqLcLhV1_geptXLw_-e5nqRsi35g39uNa_Jo5hNpoJ98LJ7Y-ljEVhJlqAuMg9xddPXoPZyE6GoIq">
+</div>
+<div class="absolute -bottom-10 -right-10 bg-surface-container-high p-8 border border-outline-variant/50 hidden md:block rounded-lg shadow-xl">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">DESIGN THEME</span>
+<p class="font-headline-sm text-headline-sm uppercase text-on-surface">Raw Stone &amp; Charcoal</p>
+</div>
+</div>
+<div class="md:col-span-5 md:pl-12">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-[0.3em] mb-4 block">Level One</span>
+<h2 class="font-headline-md text-headline-md mb-6 uppercase text-primary italic">T1: The Ancestral Hearth</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        The first floor pays homage to the 'Kitchen Heart' of Hmong homes. Designed with heavy textures of charcoal slate and smoke-stained timber, this room offers a grounded atmosphere for intimate gatherings of up to six guests.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 border-b border-outline-variant pb-4">
+<span class="font-label-caps text-label-caps text-secondary">CAPACITY</span>
+<span class="font-body-md text-body-md ml-auto text-on-surface">2–6 Guests</span>
+</div>
+<div class="flex items-center gap-4 border-b border-outline-variant pb-4">
+<span class="font-label-caps text-label-caps text-secondary">VIBE</span>
+<span class="font-body-md text-body-md ml-auto text-on-surface">Grounded &amp; Intimate</span>
+</div>
+</div>
+<button class="mt-12 px-8 py-4 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all rounded-full shadow-md">
+                        Reserve T1
+                    </button>
+</div>
+</div>
+</section>
+<!-- Floor 2: The Loom (T2) -->
+<section class="px-margin-desktop mb-section-gap bg-surface-container-low py-24 -mx-margin-desktop px-margin-desktop scroll-mt-32" id="floor2">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row-reverse gap-16 items-center">
+<div class="w-full md:w-3/5 h-[700px] overflow-hidden rounded-2xl shadow-2xl">
+<img alt="Indigo Loom interior" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3bRh1BBzOw0uIaQjC795UuH8K-xaaH_RqiX7yZu2cgA4EzWF2C-G9eMl7A9RrEFP2rCpoQZVRUgXe-x06aPN3oBwmJJghho6X-3HUd3Aj1Lvft77I3EDURgY-zm-WH06P07ty4YN2YcK7DMMa1WO1QXs-ZW7ndiOI14CpoBL8L2YrJq-5JGhW60fIjzZa9YpkOUkC5Pjm5z45FgHzYmHQ42E2Wr9KOVmuZU8czyxgvK0TrXyQ15IlxkF1BJtyE9TGYIsnw4p3cXJ">
+</div>
+<div class="w-full md:w-2/5 md:pr-12">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-[0.3em] mb-4 block">Level Two</span>
+<h2 class="font-headline-md text-headline-md mb-6 uppercase text-secondary">T2: The Indigo Loom</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Elevated and airy, the second floor draws inspiration from traditional textile weaving. Subtle patterns of indigo and geometric hemp motifs are woven into the wall panels, creating a refined backdrop for celebratory dinners.
+                    </p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="aspect-square bg-surface-container-highest flex flex-col items-center justify-center p-6 text-center border border-outline-variant/30 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">texture</span>
+<span class="font-label-caps text-label-caps text-on-surface">Textile Art</span>
+</div>
+<div class="aspect-square bg-surface-container-highest flex flex-col items-center justify-center p-6 text-center border border-outline-variant/30 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">visibility</span>
+<span class="font-label-caps text-label-caps text-on-surface">Forest View</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary italic border-l-2 border-primary pl-4">
+                        "The interplay of light and texture here mirrors the complexity of highland life."
+                    </p>
+</div>
+</div>
+</section>
+<!-- Floor 3: The Peak (T3) -->
+<section class="px-margin-desktop mb-section-gap scroll-mt-32" id="floor3">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-[0.3em] mb-4 block">The Pinnacle</span>
+<h2 class="font-display-lg text-display-lg text-primary uppercase">T3: The Cloud Sanctuary</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2">
+<div class="w-full h-[500px] overflow-hidden mb-6 rounded-2xl shadow-lg">
+<img alt="Grand Suite interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvb_FTfrFE_Db0pTwGSKl2vlL5C0N8ZIPPnhfvnSxkBFq70QKHbDbAVMyGmg_r45makJRicxEnlEi4WT9cHRoXIAd3WszjopGh1QQ5DZtTD5VAkgW0VEEdlfM9yXnUe-JB7Hc8rg7Cg3RQHtj3y93eKvy7XlQuw_6lHheX-hTORwW_Q3wxtE997UjBVs7WhNeYbNg38UQnSfxpB2vluVlF5RTYb1YqTAyAhVZ6IQ63UbN6MU6ki_HgumEb1pKtxRtuoGD9zAfm3-O9">
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-surface">The Grand Suite</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                            Our premier suite, T3 offers complete seclusion with a private terrace and an open-fire lounge area. It is the ultimate expression of A Quỳnh's private dining concept—unrivaled, quiet, and deeply sophisticated.
+                        </p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="w-full h-[240px] overflow-hidden rounded-xl shadow-md">
+<img alt="Artisanal details" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-tkRTlA_UKnlomuE3uMS3_ju70fASgcHGi4jurOSOUd_VZsxzB4UPF6w8Hh0wajgfgbbO2AxYIQqRUFI2AnFwk9BjkTgdgLJtx4vj0ERwmMWn6fkDkmz9jYmmJTyQAD3y27ztVIH9TGVz8J7HT4ofxtr1S8AY9cdZTszdynEM5htXTetgDbXigLJ8TP1L5MOA6HjeVXNqPxALXJBa32O9tY73nvCE2LqYnwJmQAcK-i7OxJgwYaUeU3PPJ-FdQDr1YEfSEt70OADD">
+</div>
+<div class="bg-surface-container-low p-8 border-l-4 border-primary rounded-r-xl shadow-sm">
+<h4 class="font-label-caps text-label-caps text-secondary mb-4">EXCLUSIVE FEATURES</h4>
+<ul class="font-body-md text-body-md space-y-3 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Private Entrance</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Dedicated Sommelier</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Open Terrace Lounge</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Personal Chef Table</li>
+</ul>
+<button class="mt-8 w-full py-4 border border-outline text-on-surface font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary hover:border-primary transition-all rounded-lg">
+                                Request Access
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Experience Banner -->
+<section class="px-margin-desktop mb-section-gap">
+<div class="max-w-[1280px] mx-auto h-[450px] relative flex items-center justify-center overflow-hidden rounded-3xl shadow-2xl">
+<div class="absolute inset-0 z-0">
+<img alt="Atmospheric smoke" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzCOlxMggWd74CrBFK3ct-ITw8rJ-gzVlkqI54sT1TGrFWnRUo7EQ47rSenjXASaLEZJWZPhO0xVdqByI5AwxGkYWYt7XQ_EOeUaz2InJopmv5iVfrM7BqIwMTX1JDjbXVpq3TYWpmsMqeblLwkylVwPXjcbjtDIGq86eUm-UafYpxocOaPtjNftqrsX2avdKMNfTCPh4Luc5t_EFNmdnQuj_0wSR1jPVRt_0cOIePqhPHB627uBedh8taG7YmYVE3jtgamVRn2PHC">
+<div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 text-center px-6 text-on-primary">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight uppercase">Every Floor Tells <br>A Different Story</h2>
+<p class="font-body-lg text-body-lg max-w-xl mx-auto opacity-90 mb-8">
+                        The ascent through A Quỳnh is a sensory transition from the warmth of the hearth to the clarity of the peak.
+                    </p>
+<div class="h-1 w-24 bg-on-primary mx-auto rounded-full"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-high border-t border-outline-variant/30">
+<div class="flex flex-col gap-6">
+<div class="font-headline-sm text-headline-sm text-primary uppercase tracking-widest">NYA</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                An artisanal journey into highland private dining, redefining the raw into the precious.
+            </p>
+<div class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+                © 2024 NYA Private Dining. All rights reserved.
+            </div>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary">EXPLORE</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Fanpage</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary">LEGAL</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Simple intersection observer to update active floor indicator
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('a[href^="#floor"]').forEach(link => {
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.remove('text-on-surface-variant');
+                            link.classList.add('text-primary', 'border-b-2', 'border-primary', '-mb-[10px]');
+                        } else {
+                            link.classList.add('text-on-surface-variant');
+                            link.classList.remove('text-primary', 'border-b-2', 'border-primary', '-mb-[10px]');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body></html>

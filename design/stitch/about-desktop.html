@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #1e1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #6b0804, #a9372a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stone-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+            opacity: 0.03;
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1e1b15",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#39322c",
+                        "on-secondary-fixed-variant": "#4a463f",
+                        "surface-variant": "#e8e1df",
+                        "tertiary-container": "#504842",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "surface-container-highest": "#e8e1df",
+                        "surface-dim": "#e0d8d6",
+                        "surface": "#fff8f6",
+                        "inverse-on-surface": "#f7efed",
+                        "on-surface-variant": "#58413e",
+                        "outline": "#8b716d",
+                        "on-primary-fixed": "#410000",
+                        "inverse-primary": "#ffb4a9",
+                        "primary": "#6b0804",
+                        "primary-container": "#8c2218",
+                        "inverse-surface": "#33302f",
+                        "background": "#fff8f6",
+                        "surface-tint": "#a9372a",
+                        "on-tertiary-container": "#c2b7b0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#faf2f0",
+                        "surface-container-high": "#eee7e5",
+                        "on-primary-container": "#ffa193",
+                        "secondary-fixed": "#e8e2d8",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#66625a",
+                        "tertiary-fixed-dim": "#d0c4bd",
+                        "on-tertiary-fixed-variant": "#4d4540",
+                        "on-surface": "#1e1b1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#201a16",
+                        "secondary": "#625e56",
+                        "tertiary-fixed": "#ece0d8",
+                        "secondary-fixed-dim": "#ccc6bc",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e6dfd5",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#881f15",
+                        "on-background": "#1e1b1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffdad5",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f4ecea",
+                        "outline-variant": "#dfbfbb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["Source Sans 3"],
+                        "headline-sm": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "label-md": ["Source Sans 3"],
+                        "label-sm": ["Source Sans 3"],
+                        "body-md": ["Source Sans 3"],
+                        "headline-md": ["EB Garamond"],
+                        "label-caps": ["Source Sans 3"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-widest">NYA</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Concept</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Menu</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label-md cursor-pointer hover:text-primary transition-colors">Language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<main class="relative overflow-hidden pt-20">
+<!-- Hero Section -->
+<header class="relative h-[819px] flex items-center justify-center overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80" data-alt="A moody, cinematic wide shot of a traditional Hmong highland kitchen at dawn. Low sunlight filters through gaps in dark wooden walls, illuminating rising steam from a heavy black cast iron pot. The atmosphere is quiet, artisanal, and deeply grounded, featuring rich charcoal tones and warm wooden textures characteristic of the NYA brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrNBZkmV-abTfGMSSoYk2chdjjRUd_MWP3lkmKCQLDwtH_nAxvpAxQQvZjvzOJ0n5lr5xPSA3hbJEzjViJpY8XMTAXTpfOy5DbaiXTEslNFs3qUVc3v2WHNHDgKHJ7Vy1j1BvHTv2dfgiAb44W_Diwynxnguf5L3lvuVCFwacstigkrBw9PLB68oxKODTUFgSAwl6Fc-2r93Lln-YwwSMQRNVfy3vvCI6MyW1VvbzdTrF59ekthUQZ4ksHcJnuzCVZXNqtI8186xCL">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/40 to-surface"></div>
+</div>
+<div class="relative z-10 text-center px-margin-desktop max-w-4xl">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase">Nguồn Cội &amp; Nghệ Thuật</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-6">Câu chuyện A Quỳnh</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+                    "Giữa đại ngàn mây phủ, chúng tôi tìm thấy bản sắc của mình trong từng thớ thịt, nhành rau và hơi ấm của bếp củi đêm đông."
+                </p>
+</div>
+</header>
+<!-- Narrative Section: The Origin -->
+<section class="py-section-gap px-margin-desktop bg-surface relative">
+<div class="max-w-container-max mx-auto asymmetric-grid">
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center order-2 md:order-1">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-primary-container pl-6">Hành Trình Ngược Gió</h2>
+<div class="space-y-6 text-on-surface-variant">
+<p class="font-body-lg text-body-lg leading-relaxed">
+                            A Quỳnh không chỉ là một cái tên, đó là hiện thân của tinh thần phóng khoáng nơi rẻo cao phía Bắc. Bắt đầu từ những buổi chiều hun khói trong căn bếp nhỏ của người Hmong, nơi mỗi gia vị đều mang hơi thở của núi rừng, chúng tôi đã khao khát mang sự nguyên bản đó đến với thực khách tinh tế.
+                        </p>
+<p class="font-body-md text-body-md">
+                            Mỗi món ăn tại NYA là một chương trong cuốn nhật ký về những chuyến đi tìm kiếm nguyên liệu quý giá: từ gừng đá treo vách núi đến hạt dổi rừng thơm nồng nàn. Chúng tôi tin rằng, nấu ăn là cách kể chuyện trung thực nhất về cội nguồn.
+                        </p>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2">
+<div class="relative group">
+<div class="absolute -inset-4 border border-outline-variant/50 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+<img class="w-full aspect-video object-cover group-hover:brightness-105 transition-all duration-700 rounded-sm" data-alt="A close-up, tactile photograph of weathered, artisanal Hmong textiles with intricate geometric patterns, resting next to a rough-hewn stone mortar filled with exotic spices. The lighting is dramatic and moody, emphasizing the raw textures and deep earthy tones like charcoal slate and heritage red, evoking a sense of precious tradition and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwrCmTAqtcuPQtiPtK47yLmCNKZNtQ3HLgiEnm5_DiLIHkJb47vU7LJB4V8lib7IhOqyyydIZKc6hx-KFB_EwNBze9-KlZYyVSO0OCwig_zFIHDcs7Cij2OK0kdkuRYZo79ODsowJs6n7HOFN16EzOC3u1yxsafW_VPPlCGsCSsoBu5R9dTlZx6HA7Shp-FkeD0Q-9jhD88xsjXga2kXe0Sd_eYNcvkJbpxCdpfa-WPbLprvN3cgoOoc51UZIKyZWEMS17WpREbKNy">
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center mb-20">
+<span class="font-label-caps text-label-caps text-secondary uppercase mb-2 block">Triết Lý NYA</span>
+<h2 class="font-display-lg text-display-lg text-on-surface">Precious &amp; Raw</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col items-center text-center p-8 bg-surface-container-lowest hover:bg-surface-container transition-colors border border-outline-variant/20 group rounded-xl">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 group-hover:scale-110 transition-transform" data-icon="local_fire_department">local_fire_department</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Lửa Hồn Nhiên</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Giữ lửa bằng củi rừng tự nhiên để hương khói len lỏi vào từng thớ thịt, tạo nên vị umami nguyên thủy nhất của đại ngàn.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 bg-surface-container-lowest hover:bg-surface-container transition-colors border border-outline-variant/20 group rounded-xl">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 group-hover:scale-110 transition-transform" data-icon="eco">eco</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Tôn Trọng Mùa Vụ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Chúng tôi chỉ phục vụ những gì đất mẹ ban tặng theo mùa. Mỗi thực đơn là một sự tri ân đến vòng tuần hoàn của thiên nhiên.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 bg-surface-container-lowest hover:bg-surface-container transition-colors border border-outline-variant/20 group rounded-xl">
+<span class="material-symbols-outlined text-primary text-5xl mb-6 group-hover:scale-110 transition-transform" data-icon="brush">brush</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Bàn Tay Nghệ Nhân</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mọi công đoạn từ giã gia vị đến bài trí đĩa ăn đều được thực hiện thủ công, tỉ mỉ như cách người phụ nữ Hmong dệt vải lanh.</p>
+</div>
+</div>
+</section>
+<!-- Quote/Atmospheric Section -->
+<section class="relative py-section-gap flex items-center justify-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" data-alt="A cinematic, low-light shot of a master chef's hands carefully plating a dish. The plate is a dark, matte ceramic with a rough stone-like texture. Minimalist garnish of vibrant green herbs and a deep red sauce accent the dish. The overall aesthetic is dark, sophisticated, and intimate, highlighting the artisanal precision of NYA Private Dining." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA39hdTkajpywhu1NTIYnubIwTwo6FI5aIxVaGPJABXIh6qTTIYqmy8vtgBUV5e6x5H4PXolzUbOgtRcxDABC7AT9m3G6DqFAmFjDNiY2nDshzV1rYGO3ykr_qF04DnwZXd03P1sUQRmuyADWK5WqHYM6aLgFSbg5ck9Ax8TNkMI9qR28G5pZsBIdm4T9cwQAlKFXF_O4A0QrAxzS4RxBlGJi5VPULwMO9xdVYUMsBZj4lwPo4y8GAht3rOsLdPn9z1nEdvZbg8lMEn">
+<div class="absolute inset-0 bg-surface/70"></div>
+</div>
+<div class="relative z-10 max-w-3xl px-6 text-center">
+<blockquote class="font-headline-md text-headline-md italic text-primary leading-snug">
+                    "Ẩm thực không chỉ là để no lòng, mà là để đánh thức những ký ức ngủ quên về một vùng đất mà ta chưa từng đặt chân tới, nhưng luôn cảm thấy thân thuộc."
+                </blockquote>
+<cite class="font-label-caps text-label-caps text-secondary mt-8 block tracking-widest">— A QUỲNH, FOUNDER</cite>
+</div>
+</section>
+<!-- Gallery / Texture Mosaic -->
+<section class="py-section-gap px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8">
+<img class="w-full h-[500px] object-cover rounded-lg shadow-sm" data-alt="A majestic landscape of the Northern Vietnam highlands with terraced rice fields disappearing into a thick, ethereal mist. The color palette is composed of muted greens, misty grays, and deep charcoal shadows, creating a tranquil and mysterious atmosphere that reflects the rugged yet refined Hmong heritage of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIuHYu15rp6AW8E6rtWUc5u9_cnPTp6e2xfhdFm-bgDdO3M9kGzlEdVrHN32d50pIWQn57A0kWeIt4QqwZvcduLLtmXKMcDJ0TMHA6tyEMeaBQwezX41Ywe2x-WH8vQwdOevSplQ2zvfL2bdFL0B5uj0nbzMNnYixPIB7cQWn9OcW2gSGNVjI3Hyn9zL2kLhXekxVdXBm1dUDqj2AR21nN67wnXZW1ueLaG_Yo5X925oryaFfg9Aq5ebtvMheHEfXhrvHvUDekGNiQ">
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col gap-6">
+<div class="h-1/2 bg-surface-container flex items-center justify-center p-12 relative overflow-hidden rounded-lg">
+<div class="stone-texture absolute inset-0"></div>
+<p class="font-body-lg text-body-lg text-on-surface relative z-10 text-center italic">Sự kết hợp giữa di sản và hiện đại.</p>
+</div>
+<img class="h-1/2 w-full object-cover rounded-lg shadow-sm" data-alt="A macro shot of burning charcoal embers in a traditional pit, glowing with intense orange and red light against a deep black background. The photo captures the fine details of ash and sparks, symbolizing the 'Lửa Hồn Nhiên' philosophy of the restaurant. High-contrast and atmospheric, fitting the premium tactile editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJzcwgcwpNtx0nHgeE31jdZmbq5ZOnAOnSVwH1u35rAqU_zU8BE07Efdt2zcuhZS1-yGh9TlgwVnWO0QO9mWlUEIRQOpbWeYnYMjYm6tGUS5gq9XY2rRQLgdIx7g6Lx8v66ZkpF5T8c4QunlsIqgwbFVhZ4fEz8Y4ia2qrwS3D52hbw6mxPR2QVejWj0OQLRC8OF19JYSFjvpnV372II-OzTaK7XIx4M4FJlD9DcYBS0apDNP9snCLMrOkHeAckcUTp-pSlsMDnW1t">
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="pb-section-gap px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center border-t border-outline-variant/30 pt-20">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8">Trải Nghiệm Sự Riêng Tư Tuyệt Đối</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Hãy để chúng tôi chuẩn bị một bàn tiệc dành riêng cho bạn và những người thân yêu.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-all active:scale-95 rounded-sm">Đặt Bàn Ngay</button>
+<button class="border-2 border-primary text-primary px-10 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary/5 transition-all active:scale-95 rounded-sm">Khám Phá Thực Đơn</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-12 bg-surface-container-low border-t border-outline-variant/20">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm text-primary uppercase tracking-widest">NYA</div>
+<p class="text-on-surface-variant max-w-xs font-body-md">Hành trình tìm về hương vị nguyên bản của vùng cao phía Bắc.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-primary text-label-sm">Theo Dõi</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Fanpage</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Instagram</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-primary text-label-sm">Thông Tin</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-primary text-label-sm">Pháp Lý</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md" href="#">Terms of Use</a>
+</div>
+</div>
+<div class="md:text-right self-end">
+<p class="text-on-surface-variant font-label-sm">© 2024 NYA Private Dining. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface/95', 'shadow-sm');
+            } else {
+                nav.classList.remove('bg-surface/95', 'shadow-sm');
+            }
+        });
+
+        // Simple reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NYA | A Quỳnh Private Dining</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Source+Sans+3:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #fff8f6;
+            color: #1e1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .textured-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            opacity: 0.02;
+            pointer-events: none;
+        }
+        .stone-gradient {
+            background: linear-gradient(to bottom, transparent, rgba(255, 248, 246, 0.6));
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-secondary-fixed": "#1e1b15",
+                "on-primary": "#ffffff",
+                "tertiary": "#39322c",
+                "on-secondary-fixed-variant": "#4a463f",
+                "surface-variant": "#e8e1df",
+                "tertiary-container": "#504842",
+                "primary-fixed-dim": "#ffb4a9",
+                "surface-container-highest": "#e8e1df",
+                "surface-dim": "#e0d8d6",
+                "surface": "#fff8f6",
+                "inverse-on-surface": "#f7efed",
+                "on-surface-variant": "#58413e",
+                "outline": "#8b716d",
+                "on-primary-fixed": "#410000",
+                "inverse-primary": "#ffb4a9",
+                "primary": "#6b0804",
+                "primary-container": "#8c2218",
+                "inverse-surface": "#33302f",
+                "background": "#fff8f6",
+                "surface-tint": "#a9372a",
+                "on-tertiary-container": "#c2b7b0",
+                "on-tertiary": "#ffffff",
+                "surface-container-low": "#faf2f0",
+                "surface-container-high": "#eee7e5",
+                "on-primary-container": "#ffa193",
+                "secondary-fixed": "#e8e2d8",
+                "error": "#ba1a1a",
+                "on-secondary-container": "#66625a",
+                "tertiary-fixed-dim": "#d0c4bd",
+                "on-tertiary-fixed-variant": "#4d4540",
+                "on-surface": "#1e1b1a",
+                "on-error-container": "#93000a",
+                "on-tertiary-fixed": "#201a16",
+                "secondary": "#625e56",
+                "tertiary-fixed": "#ece0d8",
+                "secondary-fixed-dim": "#ccc6bc",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#e6dfd5",
+                "surface-bright": "#fff8f6",
+                "on-primary-fixed-variant": "#881f15",
+                "on-background": "#1e1b1a",
+                "on-error": "#ffffff",
+                "primary-fixed": "#ffdad5",
+                "error-container": "#ffdad6",
+                "on-secondary": "#ffffff",
+                "surface-container": "#f4ecea",
+                "outline-variant": "#dfbfbb"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "margin-desktop": "64px",
+                "section-gap": "120px",
+                "gutter": "24px",
+                "margin-mobile": "20px",
+                "base": "8px",
+                "container-max": "1280px"
+              },
+              "fontFamily": {
+                "body-lg": ["Source Sans 3"],
+                "body-md": ["Source Sans 3"],
+                "label-caps": ["Source Sans 3"],
+                "headline-md": ["EB Garamond"],
+                "headline-sm": ["EB Garamond"],
+                "display-lg": ["EB Garamond"],
+                "display-lg-mobile": ["EB Garamond"]
+              },
+              "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-white overflow-x-hidden">
+<!-- Texture Overlay -->
+<div class="fixed inset-0 textured-overlay z-[60]"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary uppercase tracking-widest flex items-center gap-2">
+<span>NYA</span>
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Concept</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Menu</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant font-label-caps uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2">
+                Language <span class="material-symbols-outlined text-[18px]">translate</span>
+</button>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+<button class="md:hidden material-symbols-outlined text-on-surface" id="mobile-menu-toggle">menu</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Private Dining Hero" class="w-full h-full object-cover scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBikBNkHj-jmV5_11Xc4bvKmDkzqZ8fq2Opg_e-VVvncPlemsfw-wkFggJAeAzXxfCdUbeMeVdnDS_IUeDPdL6muPZjtng-YVA_DnV392KBVREAIaWlcvtpDKy4T5Z4-Z3BcuOKcjd2heeZiHFtHVJ6Xdqi-I0lEGqX4WCh5VXxvwvJxRiqF8is6yWdfie76aAUhIIHyQXXgX4sMVfsCGKLi0hZmp2Tv5diNpmTS-iajaKJz2PfH9nwRLTKSn9UQvleQY4Z7gAHEZIx">
+<div class="absolute inset-0 bg-white/20 stone-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+<p class="font-label-caps text-primary mb-4 tracking-[0.3em] uppercase opacity-90 drop-shadow-sm">Artisanal Highland Gastronomy</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight text-on-surface">
+                Where the Spirit of the <span class="italic text-primary">Highlands</span> Meets Refined Elegance.
+            </h1>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 font-label-caps uppercase tracking-widest hover:brightness-110 transition-all duration-300 rounded shadow-lg">
+                    Book the Experience
+                </button>
+<button class="border-2 border-primary text-primary px-10 py-4 font-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300 backdrop-blur-sm rounded">
+                    View the Concept
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-60 text-primary">
+<span class="material-symbols-outlined text-3xl">keyboard_double_arrow_down</span>
+</div>
+</header>
+<main class="relative z-10 bg-surface">
+<!-- Concept Introduction -->
+<section class="py-section-gap px-6 md:px-margin-desktop max-w-container-max mx-auto grid md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1">
+<img alt="Artisanal Food Presentation" class="w-full aspect-[4/5] object-cover border border-outline-variant shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAfZLG_hac4bbQCEMlsyO5Sm0w0_9_u2B6l-XeQmw29dsATcfSpjef4yU4yalol-qsfqwN4a_9QFvQL-B4KkFGAJmMECccKVedjm2jdS8SJgC7_Lx8FFWg4r0hwctZ8VICEAcihMex7vc5aohO0t_5dlUPAKD3yQaL1gyf2MjPHwCfTJ_Ltab2UtlbGdrRwFXfnr4hZWIUdSCTRTXHB2Rq3yvyi0mzqEY30XUqFhmvFNBiw1vzqVqAFmM5pGoeZSgKI_1maZkfOcn7">
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<span class="font-label-caps text-secondary uppercase tracking-[0.2em]">Our Heritage</span>
+<h2 class="font-headline-md text-headline-md leading-tight text-on-surface">A Quỳnh: The Alchemy of Smoke &amp; Stone.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic border-l-4 border-primary pl-6">
+                    "We do not merely serve food; we translate the ancient whispers of the Hmong highlands into a contemporary culinary dialogue."
+                </p>
+<p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+                    Named after the legendary resilience of the mountain spirit, A Quỳnh brings the hearth of the highland kitchen into a sanctuary of modern luxury. Every ingredient is sourced with reverence, every flame is a tribute to tradition.
+                </p>
+<a class="inline-block border-b-2 border-primary text-primary font-label-caps uppercase tracking-widest pb-2 hover:opacity-70 transition-opacity" href="#">Read Our Story</a>
+</div>
+</section>
+<!-- VIP Room Showcase -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<span class="font-label-caps text-secondary uppercase tracking-widest">Exclusivity</span>
+<h2 class="font-headline-md text-headline-md mt-2 text-on-surface">The Sanctuaries</h2>
+</div>
+<button class="border border-outline px-8 py-3 font-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors text-primary">Explore All Rooms</button>
+</div>
+</div>
+<div class="px-6 md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface rounded-xl shadow-sm">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img alt="VIP Room Onyx" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOmP8KxQwzLmUCI1aJDNQfa5ycgOrrH8s0JB4UdFxaN0dBuz9UHBQp4DvM81RORBxmoReel2VVIdRmZdqoyQbeURHl9MBXxtZHm6OcGw76NqAm02s907_QWbnPz47_nTw8zU2n2V3MPeYzL4GwpTYp4sRwB_sXAPdrgZguYVidm40oPl7iCwIJf1uyLAYKW97TnKrlF7zRe4llLFUhoUHTmidKfLb726oLNdEQl74J1pgkU8C9tW8QG0WAt5Zj4yMZ6RV5LNTPZCJ_">
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">The Onyx Hearth</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Capacity: 12 Guests • Private Terrace • Dedicated Chef</p>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="md:col-span-4 group bg-surface rounded-xl shadow-sm overflow-hidden">
+<div class="aspect-[4/5] w-full overflow-hidden">
+<img alt="VIP Room Bamboo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-iGkf3dnxEF-X9wPEQh-YRwwgYTdGb6XUyABNOYa_Tjc657ync-r7ugS7paB_uA7o9XLe7ueiSUyXTEZ_3s24U1Px_ho7KOPuFasj2arDR0ahnFjogisO8n5-U8UlFbACNgSjm_j0Zjiky6SMPZwJ7yfeVqRQVepG13iQ0mzjeNE8h8fczDJLvmmpLmtGifqgSRYEH0jKfTR_F612eT4fVlaY3UC5hhog4W1-2-MkTpCOk73A-57MD8IVnqPBNryqlRYZoikp8eBw">
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Bamboo Mist</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Capacity: 4 Guests • Intimate Seating</p>
+</div>
+</div>
+<!-- Small Card 2 -->
+<div class="md:col-span-4 group md:-mt-24 bg-surface rounded-xl shadow-sm overflow-hidden">
+<div class="aspect-[4/5] w-full overflow-hidden">
+<img alt="VIP Room Slate" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBryOxbh00ff5TA4YQaxHGT-o5VEubZ9EQcikNw2E1QOxJmaaRp-8WMO5x8MV0vzXIVDZDDzYSbDHoHM070zWQTWXYAQ9E_3FrO59sAOkv_8qOmQbaWKExFpWIksW18lN6OWjRigOzBKr-cp3eZiY7BlRYo7Nf6BqTaOSxwW_NzD7eFciFxRWP9oJyRtifHr5eZz7umeJCGi1c6yOu9QBrzGUaaky_yC7J-O3iPaKHStTJ8zc89jY7aQIsootLEubQusEqefmvq1fHU">
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Stone &amp; Iron</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Capacity: 8 Guests • Wine Cellar View</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Section -->
+<section class="py-section-gap px-6 md:px-margin-desktop bg-surface relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #8c2218 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-primary uppercase tracking-[0.3em]">Curation</span>
+<h2 class="font-display-lg-mobile md:font-display-lg mt-4 text-on-surface">Memorable Ceremonies</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<div class="aspect-square relative group overflow-hidden rounded-lg shadow-md">
+<img alt="Wedding Event" class="w-full h-full object-cover transition-all duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB571VF3XOltThSwLaYi0FNJWp3zJZhL0YMVQz6J9g5DQ4kpdOIBEZN52AgAzoDcQvqXMoEf7hRybD8DXzlLbna6GNzqJgrKOHWwIIWzKD8dQzTftWQU-vYqXm26rS4GdjjSrIUrtWffcboOUAf6kv-Dvyk74BhiNvUb6HHycEH84gKg7zV3FZBcy_h0n-EpFLrf4QbYJ7oGXAdEXNo3HqXBccLgai6SsejF2nXNpmIlVc3BgGlqRSzzHKHHM9xdu_TBzqZABgm_yZH">
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Private Celebrations</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Bespoke menus crafted for life's most significant milestones, from intimate unions to grand lineage gatherings.</p>
+<a class="flex items-center gap-2 font-label-caps text-primary uppercase hover:gap-4 transition-all" href="#">Enquire Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+<div class="space-y-6 mt-12 md:mt-24">
+<div class="aspect-square relative group overflow-hidden rounded-lg shadow-md">
+<img alt="Corporate Event" class="w-full h-full object-cover transition-all duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB8Vvf-z9CUMEqiiZ1x5zHF0JycmW73bs1dQ4wz7HV0G8JW-XWI2vxh_3b84PAiEIGexzTpfXhejuUaJd54GCL79Cct-VqAZjwoJJ0p1T8xaTvRnd30if_F3AjOsE8-Vz8tBaD6PhGoBZY5wokjGVqF4WkPowlx5jlSnu_ByFtSOapVfQS6f8qg71Gm9EABn0iqPGNNTnHQQDZxlS6sLU0YX0x2s6Sf_hnXwbWiPTnspfZM0LryeyCsV0kR4e1koMd1ImVioPZSbR4">
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Elite Corporate</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Command the attention of your partners in a space that defines power through understated elegance and precision.</p>
+<a class="flex items-center gap-2 font-label-caps text-primary uppercase hover:gap-4 transition-all" href="#">Corporate Booking <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+<div class="space-y-6">
+<div class="aspect-square relative group overflow-hidden rounded-lg shadow-md">
+<img alt="Cultural Event" class="w-full h-full object-cover transition-all duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCriIDcL5qryggAYR8cZgcP0U708BtA8Q0_STZ5cEApN1hqwPmjEXr_wuHHOUR7Qq3dNxRk1j6D3HbsEDmKlyrgJEfjqpBGmCDdNkkQFPCySxtbZ-5rlS832Cx3f3KcV2TXbjs6Hh3l6ClwK3we8DshRPk2p7x_ysbBvKwTuOGgcYAgqj6X1vCt1MOtdkduy_CHtyLALd7Vy7DIEy_5bkiD1xgatkO-bvlptqUmoHBXi2WUYJ8ktRCEsNoRzoGpx8nVxgDhsm7yPR9B">
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Cultural Journeys</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Immersive workshops and curated tastings that dive deep into the soul of highland artisan traditions.</p>
+<a class="flex items-center gap-2 font-label-caps text-primary uppercase hover:gap-4 transition-all" href="#">View Calendar <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-6 md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-section-gap">
+<div class="space-y-8">
+<h2 class="font-headline-md text-headline-md text-on-surface">Reach the Kitchen.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our table is ready for you. Contact us for reservations or bespoke event planning.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+<span class="font-body-lg text-body-lg text-on-surface">+84 90 234 5678</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-body-lg text-body-lg text-on-surface">reservations@nya-aquynh.vn</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-lg text-body-lg text-on-surface">64 Highland Ridge, Sapa District, VN</span>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<a class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all text-primary" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all text-primary" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<form class="bg-surface p-10 space-y-6 rounded-xl shadow-lg border border-outline-variant">
+<div class="space-y-1">
+<label class="font-label-caps text-secondary uppercase tracking-widest">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 transition-colors" placeholder="Quỳnh Nguyễn" type="text">
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-secondary uppercase tracking-widest">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 transition-colors" placeholder="quynh@example.com" type="email">
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-secondary uppercase tracking-widest">Preferred Date</label>
+<input class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 transition-colors" type="date">
+</div>
+<div class="space-y-1">
+<label class="font-label-caps text-secondary uppercase tracking-widest">Your Message</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 text-on-surface font-body-md py-3 transition-colors" placeholder="Tell us about your event..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label-caps uppercase tracking-widest hover:brightness-110 transition-all rounded">Submit Inquiry</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-6 md:px-margin-desktop bg-surface border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-primary">NYA PRIVATE DINING</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Grounded in heritage, refined for the modern epicurean. The ultimate highland sanctuary.</p>
+<div class="flex gap-4">
+<span class="font-label-caps text-on-surface-variant cursor-pointer hover:text-primary transition-colors">Vietnamese</span>
+<span class="font-label-caps text-primary border-b-2 border-primary">English</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-16 md:gap-24">
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-secondary uppercase mb-2">Explore</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Fanpage</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-secondary uppercase mb-2">Legal</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-20 pt-10 border-t border-outline-variant/10 text-on-surface-variant/60 text-sm">
+            © 2024 NYA Private Dining. All rights reserved. Heritage Redefined.
+        </div>
+</footer>
+<!-- Floating Chatbox -->
+<div class="fixed bottom-8 right-8 z-[70]" id="chatbox">
+<button class="w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all" id="chat-toggle">
+<span class="material-symbols-outlined text-3xl">chat_bubble</span>
+</button>
+<div class="absolute bottom-20 right-0 w-80 bg-surface border border-outline-variant/50 rounded-xl overflow-hidden shadow-2xl scale-0 origin-bottom-right transition-all duration-300" id="chat-window">
+<div class="bg-primary p-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+<span class="font-label-caps uppercase text-on-primary">Concierge Online</span>
+</div>
+<button class="material-symbols-outlined text-[18px] text-on-primary" id="chat-close">close</button>
+</div>
+<div class="p-6 h-64 overflow-y-auto space-y-4">
+<div class="bg-surface-container-low p-3 rounded-lg rounded-tl-none max-w-[85%] border border-outline-variant/20 shadow-sm">
+<p class="text-sm font-body-md text-on-surface">Good evening. How may I assist you with your reservation tonight?</p>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/20 flex gap-2">
+<input class="flex-1 bg-surface-container-low p-2 text-sm border-0 focus:ring-1 focus:ring-primary rounded" placeholder="Type message..." type="text">
+<button class="material-symbols-outlined text-primary">send</button>
+</div>
+</div>
+</div>
+<script>
+        // Chatbox logic
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatClose = document.getElementById('chat-close');
+
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('scale-0');
+            chatWindow.classList.toggle('scale-100');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatWindow.classList.add('scale-0');
+            chatWindow.classList.remove('scale-100');
+        });
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        mobileToggle.addEventListener('click', () => {
+            alert('Mobile navigation would open here with an artisanal transition.');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.add('bg-surface/95');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('bg-surface/95');
+            }
+        });
+    </script>
+</body></html>

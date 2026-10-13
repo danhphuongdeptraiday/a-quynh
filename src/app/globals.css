@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens "Highland Heritage" — xem DESIGN.md.
+ * Tên token giữ nguyên như trong HTML xuất từ Stitch để có thể chuyển class trực tiếp.
+ */
+@theme {
+  /* Màu */
+  --color-primary: #6b0804;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #8c2218;
+  --color-on-primary-container: #ffa193;
+  --color-primary-fixed: #ffdad5;
+  --color-primary-fixed-dim: #ffb4a9;
+  --color-on-primary-fixed: #410000;
+  --color-on-primary-fixed-variant: #881f15;
+  --color-inverse-primary: #ffb4a9;
+  --color-surface-tint: #a9372a;
+
+  --color-secondary: #625e56;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e6dfd5;
+  --color-on-secondary-container: #66625a;
+  --color-secondary-fixed: #e8e2d8;
+  --color-secondary-fixed-dim: #ccc6bc;
+  --color-on-secondary-fixed: #1e1b15;
+  --color-on-secondary-fixed-variant: #4a463f;
+
+  --color-tertiary: #39322c;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #504842;
+  --color-on-tertiary-container: #c2b7b0;
+  --color-tertiary-fixed: #ece0d8;
+  --color-tertiary-fixed-dim: #d0c4bd;
+  --color-on-tertiary-fixed: #201a16;
+  --color-on-tertiary-fixed-variant: #4d4540;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-background: #fff8f6;
+  --color-on-background: #1e1b1a;
+  --color-surface: #fff8f6;
+  --color-surface-bright: #fff8f6;
+  --color-surface-dim: #e0d8d6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #faf2f0;
+  --color-surface-container: #f4ecea;
+  --color-surface-container-high: #eee7e5;
+  --color-surface-container-highest: #e8e1df;
+  --color-surface-variant: #e8e1df;
+  --color-on-surface: #1e1b1a;
+  --color-on-surface-variant: #58413e;
+  --color-inverse-surface: #33302f;
+  --color-inverse-on-surface: #f7efed;
+  --color-outline: #8b716d;
+  --color-outline-variant: #dfbfbb;
+
+  /* Màu thương hiệu dùng riêng (charcoal cho các khối tối) */
+  --color-charcoal-slate: #262421;
+
+  /* Bo góc */
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  /* Khoảng cách & layout */
+  --spacing-base: 8px;
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: 64px;
+  --spacing-section-gap: 120px;
+  --container-container-max: 1280px;
+
+  /* Font — biến --font-eb-garamond / --font-source-sans được gắn trong layout.tsx */
+  --font-serif: var(--font-eb-garamond), Georgia, serif;
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
+  --font-display-lg: var(--font-serif);
+  --font-display-lg-mobile: var(--font-serif);
+  --font-headline-md: var(--font-serif);
+  --font-headline-sm: var(--font-serif);
+  --font-body-lg: var(--font-sans);
+  --font-body-md: var(--font-sans);
+  --font-label-md: var(--font-sans);
+  --font-label-sm: var(--font-sans);
+  --font-label-caps: var(--font-sans);
+
+  /* Cỡ chữ */
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 600;
+
+  --text-display-lg-mobile: 36px;
+  --text-display-lg-mobile--line-height: 44px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
+  --text-display-lg-mobile--font-weight: 600;
+
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-md--font-weight: 500;
+
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 32px;
+  --text-headline-sm--font-weight: 500;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 600;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.03em;
+  --text-label-sm--font-weight: 600;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.15em;
+  --text-label-caps--font-weight: 600;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  /* Chừa chỗ cho header cố định + thanh tab dính khi nhảy tới #anchor */
+  scroll-padding-top: 9rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Đặt trong layer components để các utility như `hidden`, `md:inline-block` vẫn ghi đè được */
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+    display: inline-block;
+    line-height: 1;
+    /* Giữ chỗ khi font icon chưa tải xong, tránh lộ chữ tên icon */
+    width: 1em;
+    overflow: hidden;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Lớp texture mờ phủ toàn trang, như trong thiết kế Stitch */
+@utility texture-overlay {
+  background-image: url("/textures/carbon-fibre.png");
+  opacity: 0.02;
+  pointer-events: none;
 }

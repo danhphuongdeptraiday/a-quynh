@@ -1,0 +1,292 @@
+<!DOCTYPE html><html class="light" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>A Quỳnh | Câu chuyện của chúng tôi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Source+Sans+3:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e8e1df",
+                        "secondary": "#625e56",
+                        "on-primary-fixed-variant": "#881f15",
+                        "inverse-on-surface": "#f7efed",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary": "#6b0804",
+                        "inverse-primary": "#ffb4a9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#201a16",
+                        "surface-container": "#f4ecea",
+                        "primary-container": "#8c2218",
+                        "outline-variant": "#dfbfbb",
+                        "background": "#fff8f6",
+                        "tertiary-fixed-dim": "#d0c4bd",
+                        "on-primary-fixed": "#410000",
+                        "surface-bright": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ece0d8",
+                        "inverse-surface": "#33302f",
+                        "outline": "#8b716d",
+                        "tertiary-container": "#504842",
+                        "on-secondary-fixed": "#1e1b15",
+                        "on-secondary-container": "#66625a",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "on-surface": "#1e1b1a",
+                        "surface-tint": "#a9372a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fff8f6",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ccc6bc",
+                        "on-background": "#1e1b1a",
+                        "surface-container-low": "#faf2f0",
+                        "primary-fixed": "#ffdad5",
+                        "on-tertiary-container": "#c2b7b0",
+                        "surface-container-highest": "#e8e1df",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eee7e5",
+                        "secondary-fixed": "#e8e2d8",
+                        "surface-dim": "#e0d8d6",
+                        "on-tertiary-fixed-variant": "#4d4540",
+                        "on-surface-variant": "#58413e",
+                        "secondary-container": "#e6dfd5",
+                        "tertiary": "#39322c",
+                        "on-secondary-fixed-variant": "#4a463f",
+                        "on-primary-container": "#ffa193"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max-width": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Source Sans 3"],
+                        "headline-sm": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-md": ["Source Sans 3"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "label-md": ["Source Sans 3"],
+                        "body-lg": ["Source Sans 3"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f6;
+            color: #1e1b1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .parallax-section {
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .editorial-shadow {
+            box-shadow: 0 4px 20px -2px rgba(107, 8, 4, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-margin-mobile h-16 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-outline-variant dark:border-outline-variant">
+<button class="cursor-pointer active:scale-95 transition-transform text-primary dark:text-inverse-primary" id="menu-trigger">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md tracking-widest text-primary dark:text-inverse-primary">A QUỲNH</h1>
+<div class="text-primary dark:text-inverse-primary font-label-sm uppercase tracking-wider">VN/EN</div>
+</header>
+<!-- Navigation Drawer (Hidden by default) -->
+<div class="fixed inset-0 bg-black/40 z-[60] hidden backdrop-blur-sm transition-opacity duration-300 opacity-0" id="drawer-overlay"></div>
+<nav class="fixed inset-y-0 left-0 w-80 bg-surface dark:bg-surface flex flex-col h-full py-8 px-6 z-[70] -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl" id="nav-drawer">
+<div class="flex justify-between items-center mb-10">
+<span class="font-headline-sm text-headline-sm text-on-primary-fixed-variant">Highland Gastronomy</span>
+<button class="text-on-surface-variant" id="close-drawer"><span class="material-symbols-outlined" data-icon="close">close</span></button>
+</div>
+<div class="flex flex-col gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant pl-5 font-body-lg text-body-lg hover:bg-surface-variant/50 transition-colors py-2 rounded" href="#">Menu</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant pl-5 font-body-lg text-body-lg hover:bg-surface-variant/50 transition-colors py-2 rounded" href="#">Reservations</a>
+<a class="text-on-primary-fixed-variant font-bold border-l-4 border-primary pl-4 font-body-lg text-body-lg py-2" href="#">Our Story</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant pl-5 font-body-lg text-body-lg hover:bg-surface-variant/50 transition-colors py-2 rounded" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant pl-5 font-body-lg text-body-lg hover:bg-surface-variant/50 transition-colors py-2 rounded" href="#">Contact</a>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[707px] w-full flex items-end pb-12 px-margin-mobile">
+<div class="absolute inset-0 z-0">
+<img alt="Sapa Highlands" class="w-full h-full object-cover grayscale-[30%] brightness-[70%]" data-alt="A cinematic, wide-angle landscape of the Sapa highlands in Vietnam during dawn. Rolling emerald terraced rice fields are partially veiled by a soft, ethereal mist rising from the valley. The lighting is low-key and moody, with golden sunlight barely breaking through the clouds. The overall aesthetic is archival and editorial, utilizing a warm cream and deep earth-tone palette consistent with a luxury travel journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAJX0TKm2_UYwwSMjBkp3ALgKYSsDlJntdmkc8IBSrSDyPtJ7WbpCF-e5XhsL86woT4xim71SRz0j1H9CIoGRKtV1-5KXz45stEt8fvjR60pjJyM-aXnbxzB4TYVLq3X61ZANZsEmq_Yrs5RYH2n4AwJUoBQy9sWKLlrEsLmLyOANQAL5IgQ6xYkzs2fySX7ft6pHXciA-domQUMcVptgYWh9HJdDxflTt50fgoLDg7AoExoa8gF5crugL0H1CBz1jYCwhs3a9qOCs">
+</div>
+<div class="relative z-10 text-on-primary w-full">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block opacity-90">Kể từ năm 1994</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile leading-tight mb-6">Câu chuyện của<br><span class="italic font-light">Sapa Đích Thực</span></h2>
+<div class="w-12 h-[2px] bg-primary"></div>
+</div>
+</section>
+<!-- The Origin Story -->
+<section class="py-20 px-margin-mobile bg-surface">
+<div class="max-w-md mx-auto">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-8">Nơi Sương Mù Hội Tụ</h3>
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+<p>A Quỳnh không chỉ là một nhà hàng; nó là một chương sử sống của vùng cao Bắc Bộ. Bắt đầu từ một gian bếp nhỏ nép mình bên dãy Hoàng Liên Sơn hùng vĩ, chúng tôi đã dành ba thập kỷ để lưu giữ tinh hoa ẩm thực của các dân tộc anh em.</p>
+<div class="relative py-8 my-10 pl-6 border-l-2 border-primary">
+<blockquote class="font-headline-sm italic text-primary leading-snug">
+                            "Mỗi món ăn là một lời chào từ đại ngàn, được nuôi dưỡng bởi nắng gió và sương sớm của vùng cao."
+                        </blockquote>
+</div>
+<p>Chúng tôi tin rằng ẩm thực là ngôn ngữ chân thực nhất để kết nối con người với văn hóa. Tại A Quỳnh, gia vị không chỉ để nêm nếm, mà là để kể lại câu chuyện về những cánh rừng già và đôi bàn tay khéo léo của người nghệ nhân bản địa.</p>
+</div>
+</div>
+</section>
+<!-- Visual Mosaic -->
+<section class="grid grid-cols-2 gap-2 p-2 bg-surface-variant/30">
+<div class="aspect-[4/5] overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-detail photograph of traditional Hmong textile embroidery featuring intricate geometric patterns in deep indigo and crimson threads. The fabric has a tactile, weathered texture suggesting historical craftsmanship. The lighting is soft and directional, highlighting the delicate stitches. The composition is focused and editorial, fitting for a museum archive or luxury heritage brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz2TNsguiDunXWZ41tN8P31VcJ2Zq9eGr2cs1ZhFkgMzjXvW0BrjkS0Ye2_pF_v1weB_97ArcdWhhrZCcUfWYVxwjXvwx10PLAeVVD9oka_SBx2bVwjKAnojoW4QxHquqhxFdmYiphzrabzmpPyjKAlwFcV-kzdBEAlNuoCSB-pCbzT4UcALmieW4lpl1fFA9bVBb5zte4KGI858a74RAw9DGmsaOVQl2MyGoIH9N2pEcMJGFxzMpolR2L90vUxQo9QiJKEsDk6_ZY">
+</div>
+<div class="aspect-[4/5] overflow-hidden rounded-sm translate-y-8">
+<img class="w-full h-full object-cover" data-alt="An atmospheric indoor shot of a traditional Vietnamese mountain hearth. A cast-iron pot sits over a glowing charcoal fire, with wisps of wood smoke dancing in the shafts of light entering through a wooden window. The scene is dark and cozy, using rich browns and fiery oranges. The visual style is grounded and authentic, evoking a sense of ancient culinary tradition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKZQDClmkWKvNOMpp1nX-RAkmPYcwh4I9J_TpL51gkwomhh2FW90KsoMj_gB-Xqohzl6wOPS_5E6IRro66bTm1HzBOeUZ7epZztkk_rWPbpj-4Ef4qDZtA4AS4PCfoNKVY1dLr9bNA1nil7xJz0zFliqKRDgmh9leOIq4H3IH8iC4sCJKqxDCMGMFZ7tLUV7RWIR6Jt292F8XB22zttmgUr6G89P3pPArf7MLwgtzqjLgK_YDjm96Fq86AOaSpJxEwa-WqL1zI3kFN">
+</div>
+<div class="col-span-2 aspect-video overflow-hidden rounded-sm mt-8">
+<img class="w-full h-full object-cover" data-alt="A beautifully plated signature dish of A Quynh restaurant, Thắng Cố, served in a rustic ceramic bowl placed on a reclaimed wood table. Beside the bowl are fresh mountain herbs and a small wooden spoon. The lighting is bright and clean, emphasizing the textures of the ingredients. The background is softly blurred, showing a hint of the restaurant's warm, archival interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDhOt8pcFgiRG9BISlrztG6qcohXhZexMira5_Diy4abUvrPYypVyPY1b-5ZYFJPimKH6gPP9PpTxhphbS9Yrc6cSVPmPZ76Hk3mPjxQFthFGQlum4PdQv2mRIoQXIOTCRbBxoovjxPZQ3V9KVvshTf6SgROPUQoUBHZhAy-8aU39nZhfIscuiYH3oJqAGAiglotRI4yTaWlrViCjUjUm66t61HC3LbcUyBnTDFzCw4prsPADSFcNID62Zky1brxq5veXc0J6cUeT">
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-24 px-margin-mobile bg-background">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2 block">Triết lý của chúng tôi</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Ba Trụ Cột Di Sản</h2>
+</div>
+<div class="space-y-16">
+<!-- Pillar 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined !text-3xl" data-icon="eco">eco</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Nông Sản Bản Địa</h4>
+<p class="font-body-md text-on-surface-variant max-w-xs">Chúng tôi làm việc trực tiếp với những người nông dân H'Mông, Dao để đảm bảo nguyên liệu luôn tươi mới và bền vững.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined !text-3xl" data-icon="restaurant">restaurant</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Kỹ Thuật Cổ Truyền</h4>
+<p class="font-body-md text-on-surface-variant max-w-xs">Các phương pháp ủ men, hun khói và nấu chậm được truyền lại qua nhiều thế hệ để giữ nguyên hương vị gốc.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined !text-3xl" data-icon="groups">groups</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Kết Nối Cộng Đồng</h4>
+<p class="font-body-md text-on-surface-variant max-w-xs">A Quỳnh là không gian văn hóa, nơi du khách và người dân địa phương cùng ngồi lại bên mâm cơm ấm cúng.</p>
+</div>
+</div>
+</section>
+<!-- Signature Quote -->
+<section class="relative py-32 bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile text-center">
+<span class="material-symbols-outlined text-on-primary/60 text-4xl mb-6" data-icon="format_quote">format_quote</span>
+<p class="font-headline-md italic text-on-primary leading-tight mb-8">"Vị ngon của Sapa không chỉ nằm ở đầu lưỡi, mà nằm ở ký ức về một vùng cao đầy nắng gió."</p>
+<div class="font-label-md text-label-md text-on-primary/80 tracking-widest uppercase">— Nghệ nhân A Quỳnh</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-20 px-margin-mobile text-center bg-surface">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Hãy đến và trải nghiệm</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Chúng tôi luôn sẵn sàng đón tiếp bạn với sự nồng hậu nhất của người vùng cao.</p>
+<button class="bg-primary text-on-primary px-10 py-4 font-label-md text-label-md uppercase tracking-widest editorial-shadow active:scale-95 transition-transform">
+                Đặt Bàn Ngay
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-base py-10 px-margin-mobile text-center bg-surface-container-highest dark:bg-surface-container-highest border-t border-outline-variant">
+<div class="font-headline-sm text-headline-sm text-primary mb-2">A QUỲNH</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-6">© 2024 A Quỳnh Gastronomy. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer font-label-sm text-label-sm" href="#">Facebook</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer font-label-sm text-label-sm" href="#">Instagram</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors cursor-pointer font-label-sm text-label-sm" href="#">TripAdvisor</a>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        const menuBtn = document.getElementById('menu-trigger');
+        const closeBtn = document.getElementById('close-drawer');
+        const drawer = document.getElementById('nav-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function openMenu() {
+            drawer.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            drawer.classList.add('-translate-x-full');
+            overlay.classList.remove('opacity-100');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Simple scroll reveal effect
+        const revealElements = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'translate-y-4', 'opacity-0');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
