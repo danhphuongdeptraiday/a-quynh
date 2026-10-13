@@ -117,7 +117,7 @@ export default function HomePage() {
               className={`group overflow-hidden rounded-xl bg-surface shadow-sm md:col-span-4`}
             >
               <div
-                className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[16/9]" : "aspect-[4/5]"}`}
+                className={`relative w-full overflow-hidden aspect-[4/5]`}
               >
                 <Image
                   src={room.image.src}
